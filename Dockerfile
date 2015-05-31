@@ -12,7 +12,7 @@ apt-get install -y \
 wget \
 oracle-java8-installer \
 oracle-java8-set-default && \
-wget https://github.com/armzilla/amazon-echo-ha-bridge/releases/download/v0.1.2/amazon-echo-bridge-0.1.2.jar && \
+wget https://github.com/armzilla/amazon-echo-ha-bridge/releases/download/v0.1.3/amazon-echo-bridge-0.1.3.jar && \
 mkdir -p /etc/my_init.d
 
 COPY firstrun.sh /etc/my_init.d/firstrun.sh
