@@ -8,4 +8,4 @@ See the linked thread for setup instructions: [http://forum.micasaverde.com/inde
 
 **NEW:**  
 You can now access the WebUI at SERVERIP:8080/configurator.html  
-It is much much easier to manage device that way
+It is much much easier to manage connected devices that way
