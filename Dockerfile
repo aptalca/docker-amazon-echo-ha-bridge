@@ -16,5 +16,6 @@ wget https://github.com/armzilla/amazon-echo-ha-bridge/releases/download/v0.1.3/
 mkdir -p /etc/my_init.d
 
 COPY firstrun.sh /etc/my_init.d/firstrun.sh
+COPY configurator.html /configurator.html
 
 RUN chmod +x /etc/my_init.d/firstrun.sh
