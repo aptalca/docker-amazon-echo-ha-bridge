@@ -11,5 +11,6 @@ mkdir -p /config/static
 cp /configurator.html /config/static/
 cd /config
 sed -i "s/localhost/$SERVERIP/g" static/configurator.html
+sed -i "s/8080/$SERVERPORT/g" static/configurator.html
 jar -uf amazon-echo-bridge-0.1.3.jar static/configurator.html
-java -jar -Djava.net.preferIPv4Stack=true amazon-echo-bridge-0.1.3.jar --upnp.config.address=$SERVERIP
+java -jar -Djava.net.preferIPv4Stack=true amazon-echo-bridge-0.1.3.jar --upnp.config.address=$SERVERIP --server.port=$SERVERPORT
