@@ -10,6 +10,12 @@ cp /amazon-echo-bridge-0.1.3.jar /config/
 mkdir -p /config/static
 cp /configurator.html /config/static/
 cd /config
+
+#check to see if SERVERPORT variable is set, if not, set it to default
+if [ -z "$SERVERPORT" ]; then
+  SERVERPORT=8080
+fi
+
 sed -i "s/localhost/$SERVERIP/g" static/configurator.html
 sed -i "s/8080/$SERVERPORT/g" static/configurator.html
 jar -uf amazon-echo-bridge-0.1.3.jar static/configurator.html
