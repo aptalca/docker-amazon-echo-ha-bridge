@@ -23,5 +23,5 @@ You can now access the WebUI at http://SERVERIP:SERVERPORT/configurator.html
 It is much much easier to manage connected devices that way
 
 ## Changelog:  
-2015-08-17 - Updated jar to latest version 0.2.1 - The bridge now runs as user nobody instead of root
+2015-08-17 - Updated jar to latest version 0.2.1 - The bridge now runs as user nobody instead of root  
 2015-07-17 - Updated jar to latest version 0.2.0
