@@ -1,4 +1,4 @@
-FROM phusion/baseimage:0.9.16
+FROM phusion/baseimage:0.9.17
 
 MAINTAINER aptalca
 
@@ -12,7 +12,9 @@ apt-get install -y \
 wget \
 oracle-java8-installer \
 oracle-java8-set-default && \
-wget https://github.com/armzilla/amazon-echo-ha-bridge/releases/download/v0.2.0/amazon-echo-bridge-0.2.0.jar && \
+usermod -u 99 nobody && \
+usermod -g 100 nobody && \
+wget https://github.com/armzilla/amazon-echo-ha-bridge/releases/download/v0.2.1/amazon-echo-bridge-0.2.1.jar && \
 mkdir -p /etc/my_init.d
 
 COPY firstrun.sh /etc/my_init.d/firstrun.sh
