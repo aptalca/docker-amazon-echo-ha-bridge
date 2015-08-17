@@ -6,7 +6,10 @@ echo $TZ > /etc/timezone
 export DEBCONF_NONINTERACTIVE_SEEN=true DEBIAN_FRONTEND=noninteractive
 dpkg-reconfigure tzdata
   
-cp /amazon-echo-bridge-0.2.1.jar /config/
+if [ ! -f /config/amazon-echo-bridge-0.2.1.jar ]; then
+  echo "Updating to new version 0.2.1"
+  cp /amazon-echo-bridge-0.2.1.jar /config/
+fi
 chown -R nobody:users /config
 cd /config
 
