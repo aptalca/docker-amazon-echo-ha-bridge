@@ -2,12 +2,12 @@
 
 Use Amazon Echo to voice control your home automation devices (uses http commands between the echo and your home automation controller)
 
-##Install On unRaid:
+## Install On unRaid:
 
 On unRaid, install from the Community Repositories and enter the app folder location and the port for the webUI.
 
 
-##Install On Other Platforms (like Ubuntu or Synology 5.2 DSM, etc.):
+## Install On Other Platforms (like Ubuntu or Synology 5.2 DSM, etc.):
 
 On other platforms, you can run this docker with the following command:
 
