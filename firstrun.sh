@@ -11,7 +11,7 @@ if [ ! -f /config/amazon-echo-bridge-"$VERSION".jar ]; then
   echo "Installing version '$VERSION'"
   wget https://github.com/armzilla/amazon-echo-ha-bridge/releases/download/v"$VERSION"/amazon-echo-bridge-"$VERSION".jar
 else
-  echo "Using existing version/data"
+  echo "Using existing version '$VERSION'"
 fi
 echo "Setting correct permissions"
 chown -R nobody:users /config
