@@ -4,7 +4,9 @@ MAINTAINER aptalca
 
 VOLUME ["/config"]
 
-RUN export VERSION="0.2.1" DEBCONF_NONINTERACTIVE_SEEN=true DEBIAN_FRONTEND=noninteractive && \
+ENV VERSION="0.2.1"
+
+RUN export DEBCONF_NONINTERACTIVE_SEEN=true DEBIAN_FRONTEND=noninteractive && \
 add-apt-repository -y ppa:webupd8team/java && \
 apt-get update && \
 echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | sudo /usr/bin/debconf-set-selections && \
