@@ -5,16 +5,16 @@ echo "setting the correct local time"
 echo $TZ > /etc/timezone
 export DEBCONF_NONINTERACTIVE_SEEN=true DEBIAN_FRONTEND=noninteractive
 dpkg-reconfigure tzdata
-  
-if [ ! -f /config/amazon-echo-bridge-0.2.1.jar ]; then
-  echo "Installing version 0.2.1"
-  cp /amazon-echo-bridge-0.2.1.jar /config/
+cd /config
+
+if [ ! -f /config/amazon-echo-bridge-"$VERSION".jar ]; then
+  echo "Installing version '$VERSION'"
+  wget https://github.com/armzilla/amazon-echo-ha-bridge/releases/download/v"$VERSION"/amazon-echo-bridge-"$VERSION".jar
 else
-  echo "Using existing version/data"
+  echo "Using existing version '$VERSION'"
 fi
 echo "Setting correct permissions"
 chown -R nobody:users /config
-cd /config
 
 #check to see if SERVERPORT variable is set, if not, set it to default
 if [ -z "$SERVERPORT" ]; then
@@ -22,4 +22,4 @@ if [ -z "$SERVERPORT" ]; then
   SERVERPORT=8080
 fi
 
-/sbin/setuser nobody java -Xmx312M -jar -Djava.net.preferIPv4Stack=true amazon-echo-bridge-0.2.1.jar --upnp.config.address=$SERVERIP --server.port=$SERVERPORT
+/sbin/setuser nobody java -Xmx312M -jar -Djava.net.preferIPv4Stack=true amazon-echo-bridge-"$VERSION".jar --upnp.config.address=$SERVERIP --server.port=$SERVERPORT

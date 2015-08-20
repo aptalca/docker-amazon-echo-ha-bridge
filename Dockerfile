@@ -4,6 +4,8 @@ MAINTAINER aptalca
 
 VOLUME ["/config"]
 
+ENV VERSION="0.2.1"
+
 RUN export DEBCONF_NONINTERACTIVE_SEEN=true DEBIAN_FRONTEND=noninteractive && \
 add-apt-repository -y ppa:webupd8team/java && \
 apt-get update && \
@@ -14,7 +16,6 @@ oracle-java8-installer \
 oracle-java8-set-default && \
 usermod -u 99 nobody && \
 usermod -g 100 nobody && \
-wget https://github.com/armzilla/amazon-echo-ha-bridge/releases/download/v0.2.1/amazon-echo-bridge-0.2.1.jar && \
 mkdir -p /etc/my_init.d
 
 COPY firstrun.sh /etc/my_init.d/firstrun.sh
