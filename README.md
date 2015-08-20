@@ -23,7 +23,7 @@ You can now access the WebUI at http://SERVERIP:SERVERPORT/configurator.html
 It is much much easier to manage connected devices that way
 
 ## Changelog:  
-2015-08-20 - Set max memory for java so it doesn't hog unnecessary resources on multipurpose servers
+2015-08-20 - Set max memory for java so it doesn't hog unnecessary resources on multipurpose servers - Allow for custom version install (pass environment variable in docker run as `-e VERSION="0.X.X"`)
 
 2015-08-17 - Updated jar to latest version 0.2.1 - The bridge now runs as user nobody instead of root - Updated to phusion 0.9.17 baseimage  
   
