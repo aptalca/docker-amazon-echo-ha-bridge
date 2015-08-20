@@ -6,9 +6,9 @@ echo $TZ > /etc/timezone
 export DEBCONF_NONINTERACTIVE_SEEN=true DEBIAN_FRONTEND=noninteractive
 dpkg-reconfigure tzdata
   
-if [ ! -f /config/amazon-echo-bridge-0.2.1.jar ]; then
-  echo "Installing version 0.2.1"
-  cp /amazon-echo-bridge-0.2.1.jar /config/
+if [ ! -f /config/amazon-echo-bridge-"$VERSION".jar ]; then
+  echo "Installing version '$VERSION'"
+  cp /amazon-echo-bridge-"$VERSION".jar /config/
 else
   echo "Using existing version/data"
 fi
@@ -22,4 +22,4 @@ if [ -z "$SERVERPORT" ]; then
   SERVERPORT=8080
 fi
 
-/sbin/setuser nobody java -Xmx312M -jar -Djava.net.preferIPv4Stack=true amazon-echo-bridge-0.2.1.jar --upnp.config.address=$SERVERIP --server.port=$SERVERPORT
+/sbin/setuser nobody java -Xmx312M -jar -Djava.net.preferIPv4Stack=true amazon-echo-bridge-"$VERSION".jar --upnp.config.address=$SERVERIP --server.port=$SERVERPORT
