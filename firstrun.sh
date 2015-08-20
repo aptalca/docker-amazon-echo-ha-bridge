@@ -22,4 +22,4 @@ if [ -z "$SERVERPORT" ]; then
   SERVERPORT=8080
 fi
 
-/sbin/setuser nobody java -jar -Djava.net.preferIPv4Stack=true amazon-echo-bridge-0.2.1.jar --upnp.config.address=$SERVERIP --server.port=$SERVERPORT
+/sbin/setuser nobody java -Xmx312M -jar -Djava.net.preferIPv4Stack=true amazon-echo-bridge-0.2.1.jar --upnp.config.address=$SERVERIP --server.port=$SERVERPORT
