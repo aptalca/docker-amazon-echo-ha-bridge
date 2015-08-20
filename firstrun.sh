@@ -5,16 +5,16 @@ echo "setting the correct local time"
 echo $TZ > /etc/timezone
 export DEBCONF_NONINTERACTIVE_SEEN=true DEBIAN_FRONTEND=noninteractive
 dpkg-reconfigure tzdata
-  
+cd /config
+
 if [ ! -f /config/amazon-echo-bridge-"$VERSION".jar ]; then
   echo "Installing version '$VERSION'"
-  cp /amazon-echo-bridge-"$VERSION".jar /config/
+  wget https://github.com/armzilla/amazon-echo-ha-bridge/releases/download/v"$VERSION"/amazon-echo-bridge-"$VERSION".jar
 else
   echo "Using existing version/data"
 fi
 echo "Setting correct permissions"
 chown -R nobody:users /config
-cd /config
 
 #check to see if SERVERPORT variable is set, if not, set it to default
 if [ -z "$SERVERPORT" ]; then
