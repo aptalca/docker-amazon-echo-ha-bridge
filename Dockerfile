@@ -16,7 +16,6 @@ oracle-java8-installer \
 oracle-java8-set-default && \
 usermod -u 99 nobody && \
 usermod -g 100 nobody && \
-wget https://github.com/armzilla/amazon-echo-ha-bridge/releases/download/v"$VERSION"/amazon-echo-bridge-"$VERSION".jar && \
 mkdir -p /etc/my_init.d
 
 COPY firstrun.sh /etc/my_init.d/firstrun.sh
